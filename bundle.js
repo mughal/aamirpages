@@ -125,7 +125,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const images = {\r\n    logo: __webpack_require__(/*! ./images/logo.jpg */ \"./src/images/logo.jpg\"),\r\n    aamir: __webpack_require__(/*! ./images/aamir.jpg */ \"./src/images/aamir.jpg\"),\r\n    brands: __webpack_require__(/*! ./images/brands.jpg */ \"./src/images/brands.jpg\"),\r\n    outside: __webpack_require__(/*! ./images/outside_building.jpg */ \"./src/images/outside_building.jpg\")\r\n};\r\n\r\nconst content = {\r\n    en: {\r\n        homeTitle: \"Welcome to Aamir Pharmacy\",\r\n        homeText: \"Since our opening on January 1, 2021, Aamir Pharmacy has been dedicated to providing top-notch pharmaceutical services to our community. Our experienced pharmacists and friendly staff are committed to your health and well-being. We offer a wide range of services to ensure you receive the best care possible.\",\r\n        servicesTitle: \"Our Services\",\r\n        servicesList: [\r\n            \"Prescription Fulfillment: Accurate and timely prescription processing to meet your medication needs.\",\r\n            \"Consultations: Personalized advice from our expert pharmacists to help you manage your health.\",\r\n            \"Over-the-Counter Medications: A comprehensive selection of OTC products for minor ailments and health maintenance.\",\r\n            \"Health Screenings: Regular health check-ups including blood pressure, cholesterol, and glucose screenings.\",\r\n            \"Medication Management: Assistance with managing your medications and ensuring proper adherence.\",\r\n            \"Vaccinations: Convenient and safe immunization services for flu, shingles, and more.\"\r\n        ],\r\n        contactTitle: \"Contact Us\",\r\n        contactText: \"For more information or to schedule a consultation, reach out to us at:\",\r\n        email: \"Email: contact@aamirpharmacy.com\",\r\n        phone: \"Phone: +123-456-7890\",\r\n        address: \"Address: 123 Health St, Wellness City, WP 56789\",\r\n        // images: {\r\n        //     home: images.logo,\r\n        //     service: images.image2,\r\n        //     contact: images.image3\r\n        // }\r\n    },\r\n    ur: {\r\n        homeTitle: \"عامر فارمیسی میں خوش آمدید\",\r\n        homeText: \"یکم جنوری 2021 کو ہمارے افتتاح کے بعد سے، عامر فارمیسی ہماری کمیونٹی کو اعلیٰ معیار کی دواسازی کی خدمات فراہم کرنے کے لیے وقف ہے۔ ہمارے تجربہ کار فارماسسٹ اور دوستانہ عملہ آپ کی صحت اور فلاح و بہبود کے لیے پرعزم ہیں۔ ہم آپ کو بہترین دیکھ بھال فراہم کرنے کے لیے وسیع رینج کی خدمات پیش کرتے ہیں۔\",\r\n        // images: {\r\n        //     home: images.image1,\r\n        //     service: images.image2,\r\n        //     contact: images.image3\r\n        // }\r\n    }\r\n};\r\n\r\nfunction setLanguage(lang) {\r\n    const selectedContent = content[lang];\r\n\r\n    const homeSection = document.querySelector('#home');\r\n    homeSection.querySelector('h2').textContent = selectedContent.homeTitle;\r\n    homeSection.querySelector('p').textContent = selectedContent.homeText;\r\n    // homeSection.querySelector('img').src = selectedContent.images.home;\r\n\r\n    const servicesSection = document.querySelector('#services');\r\n    servicesSection.querySelector('h2').textContent = selectedContent.servicesTitle;\r\n    // servicesSection.querySelector('img').src = selectedContent.images.service;\r\n    const servicesList = servicesSection.querySelector('ul');\r\n    servicesList.innerHTML = ''; // Clear previous list\r\n    selectedContent.servicesList.forEach(item => {\r\n        const li = document.createElement('li');\r\n        li.textContent = item;\r\n        servicesList.appendChild(li);\r\n    });\r\n\r\n    const contactSection = document.querySelector('#contact');\r\n    contactSection.querySelector('h2').textContent = selectedContent.contactTitle;\r\n    contactSection.querySelector('p').textContent = selectedContent.contactText;\r\n    // contactSection.querySelector('img').src = selectedContent.images.contact;\r\n}\r\n\r\n// Default to English on initial load\r\nsetLanguage('en');\r\n\n\n//# sourceURL=webpack://fe/./src/app.js?");
+eval("const images = {\r\n    image1: __webpack_require__(/*! ./images/image1.jpg */ \"./src/images/image1.jpg\"),\r\n    image2: __webpack_require__(/*! ./images/image2.jpg */ \"./src/images/image2.jpg\"),\r\n    image3: __webpack_require__(/*! ./images/image3.jpg */ \"./src/images/image3.jpg\")\r\n};\r\n\r\nconst content = {\r\n    en: {\r\n        homeTitle: \"Welcome to Aamir Pharmacy\",\r\n        homeText: \"Since our opening on January 1, 2021...\",\r\n        servicesTitle: \"Our Services\",\r\n        servicesList: [\"Prescription Fulfillment: Accurate and timely prescription processing...\", \"Consultations: Personalized advice...\"],\r\n        contactTitle: \"Contact Us\",\r\n        contactText: \"For more information or to schedule a consultation...\",\r\n        images: { home: images.image1, service: images.image2, contact: images.image3 }\r\n    },\r\n    ur: {\r\n        homeTitle: \"عامر فارمیسی میں خوش آمدید\",\r\n        homeText: \"یکم جنوری 2021 کو ہمارے افتتاح کے بعد سے...\",\r\n        images: { home: images.image1, service: images.image2, contact: images.image3 }\r\n    }\r\n};\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n    ensureStructureExists();\r\n    setLanguage('en');\r\n});\r\n\r\nfunction ensureStructureExists() {\r\n    const main = document.createElement('main');\r\n    main.id = 'content';\r\n    document.body.appendChild(main);\r\n\r\n    ['home', 'services', 'contact'].forEach(sectionId => {\r\n        const section = document.createElement('section');\r\n        section.id = sectionId;\r\n\r\n        const h2 = document.createElement('h2');\r\n        const img = document.createElement('img');\r\n        const p = document.createElement('p');\r\n\r\n        section.appendChild(h2);\r\n        section.appendChild(img);\r\n        section.appendChild(p);\r\n\r\n        if (sectionId === 'services') {\r\n            const ul = document.createElement('ul');\r\n            section.appendChild(ul);\r\n        }\r\n\r\n        main.appendChild(section);\r\n    });\r\n}\r\n\r\nfunction setLanguage(lang) {\r\n    const selectedContent = content[lang];\r\n\r\n    const homeSection = document.getElementById('home');\r\n    homeSection.querySelector('h2').textContent = selectedContent.homeTitle;\r\n    homeSection.querySelector('p').textContent = selectedContent.homeText;\r\n    homeSection.querySelector('img').src = selectedContent.images.home;\r\n\r\n    const servicesSection = document.getElementById('services');\r\n    servicesSection.querySelector('h2').textContent = selectedContent.servicesTitle;\r\n    servicesSection.querySelector('img').src = selectedContent.images.service;\r\n    const servicesList = servicesSection.querySelector('ul');\r\n    servicesList.innerHTML = '';\r\n    selectedContent.servicesList.forEach(item => {\r\n        const li = document.createElement('li');\r\n        li.textContent = item;\r\n        servicesList.appendChild(li);\r\n    });\r\n\r\n    const contactSection = document.getElementById('contact');\r\n    contactSection.querySelector('h2').textContent = selectedContent.contactTitle;\r\n    contactSection.querySelector('p').textContent = selectedContent.contactText;\r\n    contactSection.querySelector('img').src = selectedContent.images.contact;\r\n}\r\n\n\n//# sourceURL=webpack://fe/./src/app.js?");
 
 /***/ }),
 
@@ -140,47 +140,36 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css
 
 /***/ }),
 
-/***/ "./src/images/aamir.jpg":
-/*!******************************!*\
-  !*** ./src/images/aamir.jpg ***!
-  \******************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-eval("module.exports = __webpack_require__.p + \"2f21a9c8755c45d5605f.jpg\";\n\n//# sourceURL=webpack://fe/./src/images/aamir.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/brands.jpg":
+/***/ "./src/images/image1.jpg":
 /*!*******************************!*\
-  !*** ./src/images/brands.jpg ***!
+  !*** ./src/images/image1.jpg ***!
   \*******************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"cf57c5b151b67c2bf234.jpg\";\n\n//# sourceURL=webpack://fe/./src/images/brands.jpg?");
+eval("module.exports = __webpack_require__.p + \"2f21a9c8755c45d5605f.jpg\";\n\n//# sourceURL=webpack://fe/./src/images/image1.jpg?");
 
 /***/ }),
 
-/***/ "./src/images/logo.jpg":
-/*!*****************************!*\
-  !*** ./src/images/logo.jpg ***!
-  \*****************************/
+/***/ "./src/images/image2.jpg":
+/*!*******************************!*\
+  !*** ./src/images/image2.jpg ***!
+  \*******************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"dc36f617b84593a3bf01.jpg\";\n\n//# sourceURL=webpack://fe/./src/images/logo.jpg?");
+eval("module.exports = __webpack_require__.p + \"cf57c5b151b67c2bf234.jpg\";\n\n//# sourceURL=webpack://fe/./src/images/image2.jpg?");
 
 /***/ }),
 
-/***/ "./src/images/outside_building.jpg":
-/*!*****************************************!*\
-  !*** ./src/images/outside_building.jpg ***!
-  \*****************************************/
+/***/ "./src/images/image3.jpg":
+/*!*******************************!*\
+  !*** ./src/images/image3.jpg ***!
+  \*******************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"e574888d1b53090eff72.jpg\";\n\n//# sourceURL=webpack://fe/./src/images/outside_building.jpg?");
+eval("module.exports = __webpack_require__.p + \"e574888d1b53090eff72.jpg\";\n\n//# sourceURL=webpack://fe/./src/images/image3.jpg?");
 
 /***/ })
 
